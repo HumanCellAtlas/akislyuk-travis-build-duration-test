@@ -1,5 +1,5 @@
 script:
-- echo Running script payload
+- echo Running $TRAVIS_BUILD_STAGE_NAME; for i in {1..99}; do echo $i; sleep 60; done
 
 stages:
   - stage1
@@ -9,8 +9,6 @@ stages:
 jobs:
   include:
   - stage: stage1
-    script: echo Running stage1; for i in {1..99}; do echo $i; sleep 60; done
   - stage: stage2
-    script: echo Running stage2; for i in {1..99}; do echo $i; sleep 60; done
   - stage: stage3
-    script: echo Running stage3; for i in {1..99}; do echo $i; sleep 60; done
+    script: echo This is a custom stage script
