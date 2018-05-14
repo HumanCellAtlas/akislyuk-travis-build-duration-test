@@ -1,0 +1,16 @@
+script:
+- echo Running script payload
+
+stages:
+  - stage1
+  - stage2
+  - stage3
+
+jobs:
+  include:
+  - stage: stage1
+    script: echo Running stage1; for i in {1..99}; do echo $i; sleep 60; done
+  - stage: stage2
+    script: echo Running stage2; for i in {1..99}; do echo $i; sleep 60; done
+  - stage: stage3
+    script: echo Running stage3; for i in {1..99}; do echo $i; sleep 60; done
